@@ -184,3 +184,117 @@ Criamos um repositório com um Readme;
 Fizemos um Commit e aprendemos quando é a hora certa de fazer um.
 Na próxima aula:
 Vamos mergulhar no mundo do Github, estilizar nosso Readme e conhecer o Github Pages!
+
+@02-Commit, NVScode e equipe
+
+@@01
+Commit
+
+Paulo: Guilherme, vamos adicionar mais um arquivo. Um app.js onde fica o nosso sistema rodando. Fazer só um console.log(). Podia ser PHP, podia ser Java, Python, pode ser o que você quiser. Vamos fazer via web no site do GitHub, porque depois vamos aprender que dá para fazer na nossa máquina local e mandar lá para o GitHub.
+Veremos que dá para fazer dessas duas formas. Porque por enquanto estamos fazendo tudo no site, tudo via web. Estranho programar na web, não é? Mas é fundamental porque durante muito tempo da sua vida você vai passar navegando no site do GitHub, procurando seus arquivos, vendo o que seus colegas fizeram, e assim por diante.
+
+Guilherme: Vamos lá. Vou criar um novo arquivo, "Add file > Create new file", esse arquivo será um arquivo JavaScript, app.js. E dentro dele vamos escrever: console.log("Rodando o sistema de gerenciamento de jogos").
+
+Em seguida, vou preencher o campo do commit: "criando o arquivo js com o console". Vou fazer um commit direto nessa main, não vou alterar nada, não vamos nos preocuparmos com essas coisas ainda. E vou clicar no botão "Commit new file".
+
+Agora temos dois arquivos. Observe que podemos entrar no arquivo do readme e, ao clicar no ícone do lápis, podemos editá-lo. Isso vai estar habilitado quando eu for o dono do repositório. Vou clicar no ícone do lápis e substituir o "npm install react" por "node app.js" para ele rodar o nosso console.log().
+
+Agora que fizemos essa alteração no readme, vamos precisar dar um nome para essa alteração na área do commit. Vou colocar "alterando o readme do projeto", e vou clicar em "Commit changes".
+
+Observe que agora o nosso arquivo foi atualizado. Mas editar esses arquivos talvez fique um pouco difícil aqui no GitHub com esse esse layout. No próximo vídeo quero te mostrar algo incrível que você pode fazer com o GitHub para continuar editando, não com todos os recursos que temos localmente, mas ainda assim editando de uma forma um pouco mais conhecida por todos nós e ainda na nuvem.
+
+@@02
+Realizando um commit
+
+O commit é uma ação muito importante do Git para nos ajudar no controle da versão do nosso projeto. Um commit pode ser considerado como um marco ao longo do cronograma de um projeto.
+Sabendo disso, quando realizamos um commit, estamos:
+
+Sabendo disso, quando realizamos um commit, estamos:
+
+Alternativa correta
+Adicionando as alterações mais recentes do projeto.
+ 
+Alternativa Correta! Um commit guarda o estado do seu projeto naquele momento.
+
+Alternativa correta
+Enviando as alterações do projeto para o repositório remoto.
+ 
+Alternativa correta
+Criando um repositório no GitHub.
+
+@@03
+VSCode no GitHub
+
+Paulo: Estamos editando tudo na web, nesse editor muito fraco do GitHub que não tem corretor, não executa código, é só um editor de texto básico.
+O próximo passo é ter um lugar mais interessante para editar na web. Antes de ser na nossa própria máquina. Então, agora se o Guilherme me convidar para participar desse projeto eu ganho poder de edição e posso editar usando esse mesmo editor que estávamos usando. Mas dá para fazer de um jeito mais interessante e o Guilherme vai explicar para nós como fazer.
+
+Guilherme: Isso aí. Existe quase um "atalho hacker" para conseguirmos editar nosso código do GitHub utilizando uma estrutura do Visual Studio Code.
+
+O objetivo é o seguinte: agora, quero criar uma página HTML para nosso sistema de cadastro e quero criar a estrutura da minha página HTML. Colocar ali o tipo de dicionário, qual a versão do HTML eu quero utilizar. Vamos carregar uma forma mais fácil de conseguir editar o nosso código. Vou pressionar a tecla ponto (.) e esperar ele carregar.
+
+Olha que interessante, carregou um layout do Visual Studio Code. Ele tem algumas limitações, como por exemplo, o uso do terminal, algumas coisas mais avançadas. Mas para criarmos um arquivo HTML, colocar um código JavaScript ou CSS, ele funciona legal. Também conseguimos fazer bastante coisa por aqui.
+
+Então vou clicar no ícone de "new file", criar um arquivo chamado index.html e dentro desse index quero criar toda a estrutura do HTML. Para isso, existe um atalho em que eu insiro no código um ponto de exclamação e aperto "Enter", e ele coloca toda essa estrutura de 12 linhas do HTML automaticamente.
+
+Paulo: Lembrando que isso é algo do VS Code mesmo. Ele tem muitos templates, atalhos, e a maioria deles está disponível dentro desse VS Code da web. Tem gente que não gosta de trabalhar nesse layout na nuvem e vai criticar, mas a tendência é que no futuro mais coisas aconteçam na nuvem mesmo.
+
+Guilherme: Nesse documento, na linha 2, ele fala que a linguagem está em inglês ("en"), eu vou substituir para português brasileiro: <html lang="pt-br">. O título eu vou deixar <title>Meus jogos</title>.
+
+E dentro do body, vou colocar um h1. Quando eu escrevo "h1" e aperto "Enter", note que ele automaticamente completa a sintaxe da tag. Vou escrever <h1>Sistema de cadastro de jogos</h1>. É isso que quero criar na minha index.html.
+
+Mas temos um detalhe importante, se eu voltar no meu repositório observe que ainda não temos esse index.html listado entre os arquivos do meu projeto. Porque precisamos fazer o commit. Voltando ao VS Code do navegador, vemos que no menu da barra lateral esquerda tem um ícone de "Source Control", controle de versão. Tem um pontinho com o número 1 aqui, ele identificou que existem alterações no nosso repositório. Vou clicar nesse ícone do "Source Control". Ele exibe uma mensagem informando um campo em que podemos criar a mensagem do commit.
+
+Ele está vendo todas as mudanças que fazemos em diferentes arquivos. Se, por exemplo, eu alterar alguma coisa no README.md, ele vai indicar que o readme foi alterado. Conseguimos até comparar as alterações que fizemos.
+
+Agora vou fazer de fato um commit, colocar um rótulo indicando que criei um arquivo index.html. Vou escrever na mensagem do commit: "criando o arquivo index do projeto" e para confirmar a criação do commit basta clicar no ícone da setinha aqui em cima.
+
+Agora, ao atualizar a página do nosso GitHub vai aparecer o arquivo index no nosso projeto.
+
+Para finalizar a nossa aula vou clicar no commit "criando o arquivo index do projeto". Olha que interessante, ele vai mostrar todas as alterações que foram feitas nesse estado. Repare que ele mostrou a alteração do readme e também a alteração do index. Então podemos visualizar as edições feitas em cada estado.
+
+Se eu soubesse disso na época do TCC da faculdade, teríamos feito muito mais coisas. Então é isso, queremos que você tenha uma vida mais fácil e mais feliz. O GitHub vai te ajudar muito nos seus projetos tanto pessoais quanto profissionais.
+
+@@04
+Adicionando um colaborador
+
+Paulo: Agora vamos colaborar juntos nesse projeto. Eu vou mexer no projeto que você criou porque teremos acesso ao mesmo repositório. Quero mexer no nosso app.js e adicionar mais uma linha de código. Para que isso seja visível tanto para você quanto para mim, você precisa me dar permissão de acesso nesse projeto.
+Tem várias formas de fazer isso. O meu usuário no GitHub é "Peas", me adiciona para eu poder acessar e trabalhar nesse projeto.
+
+Guilherme: Vamos clicar nas configurações do repositório, no botão "Settings" que está localizado no canto superior direito. Na página de configurações, clico em "Collaborators" e posso convidar um colaborador. Vou inserir aqui o nome do perfil do Paulo no GitHub e confirmar o convite.
+
+Paulo: Agora vou poder editar. Antes eu já podia ler porque você criou um repositório público. Agora posso "commitar" no projeto e atualizar os arquivos que estão lá.
+
+Guilherme: Paulo, agora eu quero que você compartilhe a sua tela para vermos essa alteração acontecendo.
+
+Paulo: Eu devo ter recebido um e-mail com o seu convite também, mas já aparece aqui na minha tela uma notificação dizendo: "@guilhermeonrails te convidou para colaborar neste repositório". Eu posso clicar nessa notificação para ver o convite e confirmar a minha participação nesse repositório.
+
+Vou aceitar o convite e agora tenho acesso aos mesmos arquivos que editamos antes. Vou clicar no arquivo app.js e depois clicar no ícone de lápis para editá-lo.
+
+Vou editar esse arquivo, colocarei uma segunda linha: console.log("Aplicação está se conectando ao banco de dados"). Claro que é só um exemplo fictício o que estamos criando aqui. Vou rolar a página e lá na área de commit vou escrever: "atualizando o init do projeto".
+
+Vou clicar em "Commit changes" e ao vermos o nosso repositório já atualizado, vai aparecer dois colaboradores nesse projeto, eu e o Guilherme. E todo mundo que está nesse projeto tem acesso a isso instantaneamente. Não tem como uma pessoa ficar desatualizada, está todo mundo na mesma página.
+
+Agora, vai ter lá o histórico de que horas eu modifiquei esse arquivo.
+
+Guilherme: Depois que você fez a atualização eu recebi uma notificação avisando que você fez uma alteração no projeto.
+
+Paulo: Então é assim que você vai colaborar com seus amigos, não se esqueça. Eu acho muito importante você ir lá no Discord da Alura e encontrar pessoas que estão na mesma fase que você para trocar ideias e talvez até criar um projeto juntos. Assim você já vai sentindo como é o verdadeiro ambiente em um ambiente de trabalho.
+
+@@05
+Faça como eu fiz
+
+Chegou a hora de você seguir todos os passos realizados por mim durante esta aula. Caso já tenha feito, excelente. Se ainda não, é importante que você execute o que foi visto nos vídeos para poder continuar com a próxima aula.
+
+Opinião do instrutor
+
+Continue com os seus estudos, e se houver dúvidas, não hesite em recorrer ao nosso fórum!
+
+@@06
+O que aprendemos?
+
+Nesta aula:
+Aprendemos a acessar o VS Code por meio do GitHub;
+Convidamos um colaborador em um repositório do GitHub;
+Entendemos como verificar o histórico de commits realizados.
+Na próxima aula:
+Vamos clonar um projeto, entender a diferença entre repositório local e remoto e aprender mais comandos do git!
