@@ -298,3 +298,177 @@ Convidamos um colaborador em um repositório do GitHub;
 Entendemos como verificar o histórico de commits realizados.
 Na próxima aula:
 Vamos clonar um projeto, entender a diferença entre repositório local e remoto e aprender mais comandos do git!
+
+@03-Trabalhando Localmente
+
+@01
+Instalando o Git
+
+Nesta aula, vamos trabalhar com Git local!
+Vamos instalar o Git para começarmos a controlar as versões dos nossos códigos. Para isso, clique neste link para abrir a página oficial do Git:
+
+https://git-scm.com/
+
+Agora, com base no seu sistema operacional, realize o download da instalação do Git, como ilustra na imagem abaixo:
+
+Insira aqui a descrição dessa imagem para ajudar na acessibilidade
+
+A instalação do Git é simples, porém se precisar de um passo a passo, temos esse vídeo que pode te ajudar!
+Recomendamos realizar a instalação antes de dar continuidade no curso. Se precisar de ajuda, conte com o fórum da Alura!
+
+https://git-scm.com
+
+https://cursos.alura.com.br/course/git-github-controle-de-versao/task/57007
+
+@02
+Git clone e log
+
+Paulo: Até agora estávamos usando o site do GitHub, cadê o Git? Quando usamos o GitHub estamos sempre usando o Git. Por que essa diferença? Por que essas palavras? GitHub é uma empresa, que inclusive foi comprada pela Microsoft. Mas ela foi criada justamente para facilitar o uso do Git. tudo que usamos aqui via web, antes da existência do GitHub e seus concorrentes era tudo na linha de comando.
+Porque quem criou o Git, que é esse sistema que é só via linha de comando foi o Linus Torvalds, que é o criador do Linux. Não bastando ele criar o Linux, ele criou o maior sistema de controle de versão, que inclusive é distribuído.
+
+Estamos sempre centralizando as coisas aqui, mas é engraçado pensar que o Git - aqui são detalhes que você vai aprender com o tempo - faz tudo isso aqui de forma distribuída. tudo que estará na minha máquina é igual ao que está na máquina do Guilherme, inclusive o histórico do projeto. Isso é um mecanismo interessante que você vai entender mais adiante.
+
+O que queremos mostrar agora para você é que dá para você acessar o repositório e baixar todos os arquivos do projeto para a sua máquina, em vez de ficar usando a nuvem. Você pode e deve instalar o Git. Inclusive, tem aqui na Alura instruções para você instalar o Git no Windows, no Mac, no Linux, para poder usá-lo como linha de comando.
+
+Guilherme mostra os passos de como fazer para clonar esse repositório para que esses arquivos finalmente fiquem locais e não somente na nuvem.
+
+Guilherme: Para conseguirmos clonar esse repositório, vou vir no botão "Code" e copiar a URL que ele mostra nesse campo que apareceu. Agora vou abrir o meu terminal. Se eu fizer aqui o comando que utilizamos para clonar, ele vai colocar na pasta em que eu estiver na hora. Não é isso que eu quero, quero colocar todo esse repositório, por exemplo, no meu desktop. Vou usar o comando cd desktop para navegar para o meu desktop.
+
+Agora se eu fizer o comando git clone e der um "Ctrl + V" para colar URL do sistema-de-cadastro.git vai aparecer aqui no nosso desktop a pasta do nosso projeto. Não foi mágica não, gente. Ele fez aqui o clone do nosso projeto.
+
+Agora quero abrir esse projeto no meu VS Code e visualizar todo o código que tem nele. Mas antes vamos acessar a pasta com cd sistema-de-cadastro/, e com ls veremos o nome dos arquivos dentro dessa pasta.
+
+Paulo: Antes de existir o GitHub era só assim que dava para fazer. Tudo que fizemos durante as aulas era na linha de comando. Mostramos primeiro via web para diminuir o trauma. Sem contar que realmente acreditamos que no futuro será cada vez mais na web e um pouco menos na linha de comando no sistema local. Mais no cloud e menos no computador local.
+
+Guilherme: Uma coisa que o Paulo comentou, nós temos aqui os três arquivos e o Paulo falou que podemos trazer também o histórico das alterações que fizemos. Vamos visualizar o histórico antes de abrir o VS Code? O comando para conseguirmos visualizar todo o histórico de alterações é git log. Ele vai mostrar os mais recentes, o autor da mudança e várias outras coisas. Repare que no final aqui ele deixou dois pontos (:), para sair desses dois pontos basta apertar a tecla "Q".
+
+Mas será que conseguimos visualizar todas as alterações que fizemos em uma só linha? Conseguimos com o comando git log --oneline. Olha que interessante, ele vai mostrar todos os commits que fizemos nesse repositório de uma forma bem simples e resumida.
+
+Aqui ele passa um número, que é um código para identificar essa alteração, é a forma como o GitHub trabalha por debaixo dos panos, e vem também a descrição, a mensagem do commit que faz sentido para nós.
+
+Quando fazemos um clone de um determinado repositório do GitHub além dos códigos e todas as alterações que fizemos ele traz também o histórico de tudo que aconteceu naquele projeto.
+
+@@03
+Git status, commit e push
+
+Link citado aos 11:45 do vídeo: documentação do GitHub para geração de chave SSH.
+Paulo: Nós fizemos muitas das edições lá no site do GitHub, já percebemos vendo o log aqui que no Git, a grande sacada do Linus Torvalds teve quando criou o Git foi que esse repositório não é centralizado, ele está tanto no GitHub quanto agora, depois que você fez o comando git clone, ele está na sua máquina. É um sistema de controle de versão distribuído.
+
+Se um dia deletassem os arquivos no GitHub, você teria todo o repositório na sua máquina e também tem o histórico. Então, é muito comum usarmos via linha de comando no nosso repositório local. Por mais que dê para fazer praticamente tudo via web, precisamos saber alguns comandos principais na linha de comando.
+
+O que vamos aprender a fazer agora é saber se está tudo sincronizado com o nosso repositório, veremos qual é o status, se fizemos alguma mudança do nosso local que ainda não foi enviado para o repositório de origem - não chamamos de "central" chamamos de "origem" - e também vamos aprender a fazer o commit. Veremos que tem dois momentos, tem a hora que você "commita" e tem a hora que você empurra todas as mudanças do nosso repositório aqui da nossa máquina para o GitHub. Vamos ver isso na linha de comando?
+
+Guilherme: Vamos.
+
+Paulo: Tive uma ideia, vamos já ensinar a falar assim: "Pega todas as mudanças que fizeram lá no repositório origem e atualiza o projeto aqui no local". Como fazer isso?
+
+Guilherme: Primeira coisa que vamos fazer é pegar aquele link mais uma vez, clicando em "Code" e copiando a URL do nosso projeto. De volta ao console, vou dar um git pull.
+
+Paulo: O git pull é uma forma de fazer a atualização. Clonar é só a "primeira vez", agora quero puxar tudo que está lá para atualizar aqui.
+
+Guilherme: Exatamente. Vou escrever git pull seguido do link que copiei, pressionei "Enter". E pelo o que ele informou estamos em dia.
+
+Paulo: Então não teve atualização. Se alguém tivesse mexido lá enquanto eu e o Guilherme estamos dando a aula aqui. Seria informado aí que tal arquivo foi atualizado, tal arquivo foi deletado, tal arquivo foi adicionado.
+
+Guilherme: Isso aí. Quem vai fazer essas atualizações somos nós, Paulo. Nós vamos mandar coisas diferentes para o nosso repositório.
+
+Vou abrir o VS Code e vou arrastar a pasta do meu projeto, que está no desktop, para dentro do VS Code, para atualizar alguma parte da nossa aplicação. Temos aqui o nosso app.js, com os nossos console.log, o index.html, que inicialmente só tem o h1, e temos o readme.md.
+
+O que faremos agora? Diferente do CodePen e outras ferramentas onde o HTML já entende o código CSS que já entende o código JavaScript, aqui não. No HTML eu preciso informar que tem um arquivo JavaScript rodando nesse projeto. Então, aqui na linha 10 vou dar um "Enter" e colocar um <script src=""> aqui. Esse script src vai informar que temos arquivos JavaScript a serem lidos: <script src="app.js">.
+
+Agora sim, quando rodarmos essa aplicação o código que colocamos no app.js será executado no HTML. Então, a única coisa que fizemos foi linkar o arquivo JavaScript com o arquivo HTML.
+
+Paulo: Vale lembrar que isso tudo é um projeto de mentira, mas estamos mostrando como as coisas acontecem. Você mexe em um arquivo, às vezes mexe em mais de um arquivo ao mesmo tempo. Nesse aqui só mexemos em um.
+
+Guilherme: Podemos usar o terminal integrado do próprio VS Code para fazer alterações. Ao abrir o terminal do VS Code podemos usar o comando git status para ver o que tem de diferente nesse projeto. Quando dou um "Enter" ele vai falar que tem um arquivo que foi modificado, o arquivo modificado foi o index.html. Agora temos um desafio. Precisamos pegar essas modificações que fizemos aqui nesse arquivo. O VS Code até indica com uma linha verde no início da linha que foi modificada.
+
+Paulo: O VS Code pega as coisas do GitHub que estão no local e percebe que você mudou aquela linha.
+
+Guilherme: Tem duas formas para criarmos um commit com base nas modificações que fizemos agora. Podemos ir por esses ícones que estão aqui em cima no menu explorer ou podemos fazer via código. Como já fizemos no VS Code online lá no GitHub, agora eu vou fazer via código no terminal.
+
+Paulo: Vamos direto no terminal ver o git status. Ele indicou que tem uma modificação sim. Agora vamos falar que queremos commitar esse arquivo. E somos obrigados a dar uma mensagem igual fizemos da outra vez. O comando que usaremos é o git commit.
+
+Guilherme: Isso. Vamos usar o comando git commit para criar um commit assim como fizemos para os anteriores. Essa mensagem de commit é muito importante, aqui vamos passar exatamente qual arquivo queremos commitar.
+
+Paulo: Pode até usar ponto se quiser o diretório inteiro, pode separar os arquivos por espaços, tem várias formas. Aqui só vamos commitar a modificação do index. E logo depois você põe uma mensagem.
+
+Guilherme: Para criar essa mensagem, essa etiqueta desse commit, vou colocar, por exemplo, "linkando o app.js com o html": git commit index.html -m "linkando o app.js com o html". Pressiono "Enter" e pronto, ele fez o commit e adicionou essa alteração.
+
+Vou limpar o terminal e rodar o git status novamente, dessa vez repare que ele não trouxe nenhuma modificação ele até fala aqui "use o push para publicar seus commits locais", ou seja, podemos pegar todas as modificações que fizemos localmente aqui na nossa máquina e mandar essas modificações lá para o nosso código no GitHub. Vamos fazer isso, Paulo?
+
+Paulo: Vamos. Lembrando que "push" em português significa empurrar. Agora vamos empurrar todos os commits, posso ter feito mais de um, e vamos empurrar para o repositório origem.
+
+Guilherme: Vou colocar aqui no terminal o comando git push origin main, porque estamos trabalhando só com a divisão principal, o main.
+
+Paulo: No site do GitHub, já podemos ver essa atualização que foi "empurrada" para o repositório origem. Já começamos a ver alguma diferença: Git é a ferramenta e GitHub é o lugar que te ajuda a ter esse repositório origem para todo mundo poder trabalhar nesse projeto. Podemos ver que o último commit no arquivo index foi há 3 minutos.
+
+Quando entramos no arquivo podemos, inclusive, clicar no botão "History", que está localizado à direita, para ver toda a história desse arquivo.
+
+Estamos vendo tudo sendo amarrado aí. Pode ser que você tenha tomado uma mensagem de erro, porque para empurrar, ter o direito de escrever no repositório além de ter sido adicionado como colaborador no repositório, que foi o que o Guilherme fez comigo na outra aula, você precisa ter configurado corretamente os seus parâmetros de Git no seu computador. São alguns parâmetros que ficam num arquivo de configuração, como a sua chave pública. Inclusive, em algum lugar você terá uma chave primária.
+
+Vamos deixar os links dessa configuração, esse momento tem umas linhas de comando a mais que você tem que fazer, basicamente, só uma vez na vida. Que é gerar sua chave para o GitHub saber, por exemplo, que o Guilherme que está empurrando isso é o Guilherme que tem o login e senha que ele logou no GitHub. Então isso tem aquele mecanismo de chave pública e chave privada de criptografia. Você não precisa entender desse assunto, futuramente no decorrer da sua carreira é importante, mas é uma forma de você saber que quem está conversando é uma pessoa que pode sim escrever no repositório.
+
+Por que não aconteceu isso antes na web? Porque na web já estávamos logados dentro do GitHub, dessa vez fizemos do nosso local para a nuvem. Nessa hora que empurramos da nossa máquina para a nuvem o GitHub verifica se temos as credenciais para editar esse repositório. Ele checa mecanismos de permissão do Git. Através da chave, de assinatura, etc. Provavelmente muitos de vocês já fizeram isso quando instalaram o Git que está lá no nosso manual.
+
+Guilherme: Isso aí. É por questões de segurança da nossa aplicação mesmo. E na sequência, vamos aprender como navegar entre versões diferentes. Por exemplo, subi uma versão mas quero voltar para uma versão anterior. Ou o que acontece geralmente na época da Black Friday, a maioria dos e-commerces alteram o layout e depois voltam para o layout padrão.
+
+Como fazer essa navegação entre projetos? Será que o pessoal tira tudo na mão mesmo ou eles usam um comando no GitHub para mudar a versão do projeto? É isso que vamos descobrir.
+
+https://docs.github.com/pt/enterprise-server@3.2/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
+https://docs.github.com/pt/enterprise-server@3.2/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
+@@04
+O que vimos até aqui
+
+Paulo: No intervalo, eu mexi em um arquivo do nosso sistema. Porque eu quero que você dê o pull e veja as modificações. Inclusive, tem várias formas de darmos pull ou push. O Guilherme fez das maneiras mais explícitas.
+Quando nossos arquivos de configuração estão bem configurados, para o git pull basta fazer git pull, não precisa colocar aquela URL gigante. Então, se fizer um git pull agora, ele vai informar que o app.js tem três linhas a mais. Se você abrir o app.js agora vai ver que tem uma modificação lá.
+
+Guilherme: Vamos ver na web também como essa atualização aparece.
+
+Paulo: E se você clicar no commit dá para ver o histórico de edições.
+
+Guilherme: Sim. Antes tínhamos duas linhas, agora temos três linhas adicionadas aqui, assim como ele nos informou no terminal.
+
+Paulo: Ele mostra essa tela de como era antes e como está depois da edição, isso é o que chamamos de "diff". É muito comum falarmos: "Me mostra o diff do seu commit, deixa eu ver o que você modificou". Esse é um jargão muito comum. Você também pode fazer o diff dessa versão com versões mais antigas. Dá para fazer diff tanto via web quanto na linha de comando.
+
+Tem coisas que, para ser sincero, vai ser até mais fácil em linha de comando. E é muito comum usar a linha de comando, é raro um time de desenvolvimento que vá usar apenas a versão web. Esperamos que no futuro seja apenas web, mas hoje você precisa encarar a linha de comando no terminal e praticar bastante.
+
+Guilherme: Como você falou, nesse repositório específico posso fazer só um git pull, sem passar a URL, o mesmo aconteceria para um git push também. Não preciso passar a origem principal.
+
+Vou colocar aqui no app.js mais um console.log(): console.log("Enviando para o GitHub"). Salvei esse arquivo, vou para o terminal e fazer um git commit app.js. Aqui tem um ponto interessante, se eu faço modificações em mais de um arquivo, posso colocar só o ponto: git commit ., isso significa que quero pegar todo o meu projeto. Vou colocar uma mensagem: git commit . -m "adicionando um console log". Vou dar um "Enter" e fazer o git push com esses dois, pressiono "Enter" e ele vai enviar para o repositório origem.
+
+Quando voltarmos para o nosso repositório no site do GitHub já vai estar atualizado. Agora o arquivo app.js tem as edições do Paulo e a minha. Eu fiz o pull, fiz o commit e já fiz o push para enviar o código que eu fiz.
+
+Lembrando, estou trabalhando sem nenhuma ramificação, um nome meio técnico que o pessoal dá para as divisões, existem várias estratégias para dividir o Git, para separar o que é código de teste, código de desenvolvimento e código principal. Quando trabalhamos em uma só raiz, que é o nosso código main, não precisamos especificar exatamente onde estamos trabalhando.
+
+O que eu quero fazer agora é voltar a minha aplicação para um estado anterior. Na página do nosso repositório no GitHub, temos o ícone de um relógio que está com o número 8 do lado dele. Isso significa que temos 8 versões de história, 8 commits feitos.
+
+Paulo: Não é quantos push, é quantos commit, porque às vezes num push tem mais de um commit. Ainda não fizemos isso, mas poderia acontecer. Clicando aí neste ícone do histórico dá para listarmos todos e ver a história inteira da aplicação. Todas as modificações.
+
+Guilherme: Eu quero fazer algo interessante, eu quero voltar para a sua modificação. Não que a modificação que eu fiz esteja ruim, mas eu quero retornar para o estado do projeto que estava naquele momentodo seu commit.
+
+Paulo: Claro que daria para clicar em um desses, ver como era o arquivo antes, copiar e colar, dar um commit e um push. Você passar por cima. Mas o Git tem mecanismos para você falar: "Por favor, volte para como era na época de determinado commit".
+
+Trabalhar com Git e GitHub não é só para fazer o mesmo que um Dropbox, por exemplo, é muito mais. Ele guarda todas as versões, todos os históricos, você pode ir, pode voltar, ver quem fez, qual o tamanho, se isso estava conectado com aquilo. É realmente feito para trabalhar com muito código. E é muito frequente vermos o histórico dos arquivos, porque se você vê como era antes, começa a entender as modificações que foram feitas. Precisamos ganhar esse hábito, não tenham medo de entrar no GitHub e ver esses históricos.
+
+Guilherme: No GitHub local via linha de comando também temos acesso a essas modificações e vou deixar até um "Para saber mais" explicando como conseguimos visualizar o log, saber a hora, de quem é a autoria daquele commit, etc.
+
+Eu quero visualizar essas mensagens do histórico e voltar o meu projeto para o estado desse commit que o Paulo fez. Então, na linha de comando, para visualizar o log das modificações vou colocar: git log --oneline. Eu quero voltar para o commit "a0c893b console log indicando modificações do Paulo". Então, vou copiar essa sequência de caracteres "a0c893b" que identifica esse commit como sendo único e vou colocar o seguinte comando: git restore.
+
+O git restore vai fazer a gente voltar para um determinado momento da aplicação. Mas preciso indicar para ele qual hash vamos utilizar. Para indicar qual hash vamos utilizar vou colocar --source e vou passar o hash com aqueles caracteres que copiei do commit que o Paulo fez:
+
+git restore --source a0c893bCOPIAR CÓDIGO
+Mas ainda tem uma coisa interessante, se eu escrever, por exemplo, app.js, vou pegar esse commit que o Paulo fez naquele momento e vou deixar todo o app.js naquele estado. Mas se o Paulo tivesse feito modificações em diversas partes da minha aplicação e quero voltar a minha aplicação para aquele determinado momento, eu coloco só o ponto(.), esse é o comando que vamos utilizar, vamos inserir o ponto:
+
+git restore --source a0c893b .COPIAR CÓDIGO
+Agora sim vou pressionar "Enter" e não recebi nenhuma mensagem diferente. Se eu der um git log --oneline, olha que interessante. Ele vai continuar da mesma forma.
+
+Paulo: Ele restaurou, mas só localmente, ainda não commitamos as mudanças. Agora podemos falar que vamos commitar o arquivo tal, voltando atrás de acordo com determinado commit.
+
+git commit app.js -m "voltando para o estado do paulo"COPIAR CÓDIGO
+Agora o git status vai falar que só falta o push. Vamos dar um git status para vermos como está. Está tudo commitado, não tem nada sujo. Nosso repositório local está preparado, mas ele está na frente do original por 1 commit, então você tem que empurrar esse commit para lá. Ou dá até para cancelar o commit se tiver feito algo errado, tem vários comandos, muitas opções para trabalhar com os commits que fizermos. Agora nós queremos empurrar, queremos fazer o push.
+
+Guilherme: Podemos ver no navegador que as modificações que eu havia feito não saíram porque eu voltei ao estado anterior, mas não havia feito um commit. Agora sim fiz o commit, e vou fazer o comando git push.
+
+Agora no navegador, quando atualizamos a página, aquela linha que eu havia feito sumiu, voltamos para o commit que o Paulo havia criado.
