@@ -472,3 +472,86 @@ Agora o git status vai falar que só falta o push. Vamos dar um git status para 
 Guilherme: Podemos ver no navegador que as modificações que eu havia feito não saíram porque eu voltei ao estado anterior, mas não havia feito um commit. Agora sim fiz o commit, e vou fazer o comando git push.
 
 Agora no navegador, quando atualizamos a página, aquela linha que eu havia feito sumiu, voltamos para o commit que o Paulo havia criado.
+
+@@05
+Para saber mais: Git log
+
+Se você deseja verificar o histórico de alterações, as mensagens de commits, o nome do autor daquele commit e outras informações sobre o projeto, existe um comando do git que pode te ajudar. Este comando é o git log.
+Como já sabemos, os commits possuem hashs que os identificam de uma forma única, isto é, não existem dois commits com o mesmo hash. Com o git log podemos ver o hash e várias outras informações do commit.
+
+Podemos visualizar todos os commits, um em cada linha com o comando:
+
+git log --onelineCOPIAR CÓDIGO
+Se, em vez de menos informações, quisermos ver mais como as alterações do commit, podemos usar:
+
+git log -pCOPIAR CÓDIGO
+Também podemos pesquisar as informações do autor daquele commit com o comando:
+
+git log --author="user_name"COPIAR CÓDIGO
+E pesquisar informações por data:
+
+git log --since=1.month.ago --until=1.day.agoCOPIAR CÓDIGO
+No comando acima, estamos buscando as informações do commit desde um mês atrás até um dia atrás.
+
+Você também pode formatar a visualização das informações de commit com o comando:
+
+git log --pretty="format:%h %s"COPIAR CÓDIGO
+Este traz o hash seguido da mensagem de commit. Para saber mais formas de exibir as informações de commit, aqui tem uma lista de maneiras que você pode fazer isso.
+
+Bem legal, não é? E se eu te contar que existem vários outros parâmetros que podemos passar no git log? Se você deseja saber mais sobre como exibir as informações de seus commits, você pode conferir neste link.
+
+https://devhints.io/git-log-format
+
+https://devhints.io/git-log
+
+@@06
+Para saber mais: clone do git
+
+Imagine que você esteja trabalhando em um projeto que já está configurado em um repositório de origem, e deseja colaborar com esse projeto. Com o git clone, é possível criar uma cópia de desenvolvimento em um repositório local, e todas as alterações que você fizer serão gerenciadas a partir desse repositório. O comando git clone é usado para selecionar um repositório existente e criar um clone ou uma cópia dele em um repositório local.
+O comando git clone cria uma cópia de um repositório git existente, e esse repositório pode ser local ou remoto. Além disso, essa cópia é um repositório git completo, com seu próprio histórico, gerenciamento de seus próprios arquivos e é um ambiente isolado como um todo do repositório original.
+
+Por conveniência, a clonagem cria uma conexão remota apontando para o repositório original. E é essa conexão que facilita muito a interação com o repositório central. Você pode consultar um exemplo demonstrando o git clone aqui!
+
+Com o git clone você também pode clonar o repositório para uma pasta específica:
+
+git clone <repositorio> <meu-projeto-clone>COPIAR CÓDIGO
+O repositório localizado em repositorio é clonado para uma pasta chamada meu-projeto-clone.
+
+Você também pode configurar o git clone e clonar o repositório a partir de uma branch específica, diferente da original dessa forma:
+
+git clone -branch new_feature <repositorio>COPIAR CÓDIGO
+O exemplo acima clonaria apenas a branch new_feature de repositorio. Outras configurações de opções do git clone você pode consultar neste link.
+
+https://www.atlassian.com/br/git/tutorials/setting-up-a-repository
+
+https://git-scm.com/docs/git-clone
+
+@@07
+Faça como eu fiz: comandos do git
+
+Uma pessoa atua como dev front-end e concluiu implementações importantes no desenvolvimento do projeto no qual está trabalhando. Agora, ela precisa verificar as modificações realizadas, adicioná-las ao seu repositório local, salvá-las e depois enviá-las ao repositório remoto utilizando o Git.
+Com base nesse contexto, quais comandos do git você pode utilizar para realizar essas ações?
+
+Opinião do instrutor
+
+1 - Para verificar as modificações realizadas:
+Utilize o comando git status, ele serve para listar todos os arquivos que foram modificados.
+2 - Para adicionar as mudanças ao seu repositório local:
+
+Para adicionar todas as modificações realizadas de uma só vez, é necessário usar git add . (git add e um ponto) e, para adicionar as mudanças em algum arquivo específico, usa-se git add nome-do-arquivo-alterado.
+3 - Para salvar as alterações:
+
+Utilize o comando git commit, ele é usado quando queremos capturar e salvar o estado atual do repositório.
+4 - Para enviar as modificações ao repositório remoto:
+
+Utilize o comando git push, ele é utilizado para envio das alterações gravadas no diretório local para o repositório remoto.
+
+@@08
+O que aprendemos?
+
+Nesta aula:
+Entendemos a diferença entre Git e GitHub;
+Aprendemos como acessar o histórico de commit de um repositório;
+Aplicamos alterações no projeto em um mesmo commit.
+Na próxima aula:
+Vamos aprender na prática como resolver problemas de issue ao realizar git push!
