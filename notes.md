@@ -555,3 +555,107 @@ Aprendemos como acessar o histórico de commit de um repositório;
 Aplicamos alterações no projeto em um mesmo commit.
 Na próxima aula:
 Vamos aprender na prática como resolver problemas de issue ao realizar git push!
+
+#### 15/07/2023
+
+@04-Adicionando Arquivos
+
+@@01
+Git clone e Git log
+
+Guilherme: Então, essa é a forma que temos para navegar. Vamos fazer uma revisão dos principais comandos?
+Começamos com o git clone, clonamos o repositório que tínhamos acesso de colaborador.
+
+Paulo: Público sempre podemos clonar, se fosse privado precisaria estar bem configurado. Além de a pessoa te adicionar no time como o Guilherme fez, você precisa ter aquelas chaves para você configurar.
+
+Guilherme: Depois que fizemos o clone, conseguimos ver o log da nossa aplicação de duas formas, git log mostrando detalhes de quem é o autor, qual a data em que foi feito, ou o git log --oneline, que é o log em apenas uma linha.
+
+Além disso, fizemos o nosso git commit indicando o nome do arquivo que queremos alterar. Podemos até colocar um ponto para pegar o diretório atual e todos de dentro dele: git commit . -m "".
+
+Paulo: Às vezes eu faço. Quem é bom mesmo de Git vai falar para sempre selecionarmos os arquivos exatamente os arquivos que queremos dar commit e suas respectivas mensagens. Geralmente, as pessoas vão acabar usando o ponto e informando qual foi a modificação.
+
+Guilherme: Para enviarmos as nossas modificações: git push. Pegamos tudo o que fizemos e mandamos lá para o repositório.
+
+Paulo: Que pode ser mais de um. Podemos empurrar todos os commits que fizemos lá para o repositório origem.
+
+Guilherme: Esses foram os principais comandos. Meu principal desafio para essa aula é: crie um repositório, crie commits dos seus projetos, coloque seus projetos com versões diferentes, crie mensagens de commits que façam sentido para outras pessoas. Às vezes uma mensagem faz muito sentido para mim, mas outra pessoa pode não entender. As mensagens de commit são importantes. Pratiquem os commits locais. Não vimos muitos comandos até agora, mas vimos os essenciais, você vai utilizar mesmo durante seu dia a dia como pessoa desenvolvedora.
+
+Paulo: Esse é o principal do GitHub, seja web ou via linha de comando do Git. Agora vamos trabalhar com os vários branches, entender melhor o que é esse main, que antigamente até chamava master, quais são as opções de podermos trabalhar em paralelo com duas versões e juntar tudo lá no final, o tal do merge. transformaremos em branches (galhos) e depois fazemos os merges. Isso é muito frequente, na web vai ficar mais visível quando tiver esses caminhos.
+
+Também veremos o comando git add. Se queremos adicionar um arquivo novo não basta fazer commit, temos que informar que o arquivo novo faz parte do diretório. Veremos mais alguns comandos que são muito importantes.
+
+Tem milhares de comando. Neste curso estamos passando aqueles que são vitais para você trabalhar no seu dia a dia. O Guilherme que manja mais é que vai dar essa parte do curso. E eu volto para finalizar e dar dicas e desafios para você. Chegou nesse momento, você precisa fazer exercícios, precisa praticar.
+
+@@02
+Navegando no tempo
+
+Você fez quatro commits em seu código HTML: Adicionando Title, Adicionando imagem de fundo, Adicionando tabela e Adicionando footer, mas os três últimos commits não foram aprovados por seu supervisor. Então, você precisa voltar ao ponto inicial do projeto. Qual o comando que você precisa utilizar para navegar no passado?
+Com base no que vimos em aula, analise as alternativas abaixo e marque apenas a correta:
+
+Usamos o comando restore para voltar exatamente ao ponto que inicial do projeto.
+ 
+Alternativa correta! Usamos o comando Restore informando o ID do primeiro commit depois da flag --source. Te convido a ler mais sobre Restore nesse artigo da Alura.
+Alternativa correta
+Não é possível voltar tanto assim em projeto depois de vários commits.
+ 
+Alternativa correta
+Usamos o comando checkout para voltarmos ao ponto que queremos.
+
+@@03
+Git add
+
+Quando acessamos determinada aplicação, por exemplo, a página da Alura ou página dos filmes mais votados da Netflix, algo desse tipo. Existem diversas páginas dentro desse mesmo projeto. Agora eu quero criar uma página nova, por exemplo, de contato.
+Vou criar um novo arquivo chamado contato.html. Para inserir automaticamente a estrutura do HTML vou inserir um sinal de exclamação e pressionar "Enter". O título da página será contato: <title>Contato</title>. Também vou deixar o idioma como português <html lang ="pt-br"> e inserir um h1 no body de <h1>Contato</h1>.
+
+Vamos supor que eu desenvolvi essa página e tudo ficou legal. Agora vamos usar o nosso terminal, se eu dou aqui um git status e dou "Enter", observe o que aconteceu.
+
+Ele falou que existem modificações no app.js e existe aqui uma página de contato. Então, se eu tenho mais de uma modificação para adicionar, geralmente o que eu faço? Faço um git add, e passo o nome do arquivo que quero adicionar: git add app.js.
+
+Agora que já adicionamos o app.js para as modificações dele serem "escutadas", vou usar o commit e passar uma mensagem de commit:
+
+git commit app.js -m "corrigindo o app js"COPIAR CÓDIGO
+Vou dar "Enter" e ele colocou essa modificação. Se eu dou um git push para ele enviar essas modificações para o nosso repositório, a partir do momento que eu atualizar, observe que ele vai mostrar a atualização que eu fiz.
+
+Mas aquele nosso contato.html não apareceu, essa página não está sendo vista pelo GitHub. Porque fizemos o commit e adicionamos as modificações apenas do app.js. Vamos supor que criemos várias páginas para um site, será que precisaríamos colocar git add e o nome de todas as páginas? E o mesmo para os outros arquivos JavaScript e arquivos CSS que criarmos?
+
+Não. Nós podemos usar apenas um comando git addadicionando um ponto (.): git add . Assim, como o Paulo falou, e temos que tomar bastante cuidado com isso, todas as modificações que fizermos no nosso repositório, na raíz do nosso projeto e nas outras pastas, elas serão "ouvidas" quando usarmos o ponto.
+
+Vou fazer então, um git git add . e, em seguida, farei um commit: git commit -m "criando a página de contato". Dou um git push, e agora no site do GitHub já temos a atualização com a nossa página de contato
+
+Não podemos esquecer que para que o Git consiga analisar quais arquivos estão sendo criados e as modificações que fizemos nesse arquivo, é importante pensarmos no git add para colocar arquivos novos para serem vistos pelo GitHub.
+
+Vocês viram que eu havia feito modificações no app.js e no arquivo de contato. Mas quando adicionei o commit e fiz o push, só o app.js que foi para o repositório. Se quero que a página de contatos também apareça, é necessário incluir essa página também.
+
+Recapitulando: para incluir só uma página podemos usar git add + nome da página, nesse caso:
+
+git add contato.htmlCOPIAR CÓDIGO
+Se tenho diversas páginas e modificações, e quero adicionar todas essas modificações no repositório para versionamento utilizo o ponto:
+
+git add .
+
+@@04
+Para saber mais: Open Source
+
+Você sabe o que é Open Source?
+Open Source é um código projetado para ser acessado abertamente por qualquer pessoa, que pode ver, modificar e distribuir conforme suas demandas.
+
+Você pode ver mais detalhes nesse artigo do Bruno Divino.
+
+https://www.alura.com.br/artigos/open-source-uma-breve-introducao?_gl=1*1vjz3xf*_ga*MTgwMzIzMjk2Ni4xNjg4ODE5OTcz*_ga_59FP0KYKSM*MTY4OTQ1NjQ5Mi4xNC4xLjE2ODk0NTcxNjguMC4wLjA.*_fplc*eUM3ck9VJTJCJTJGZVNoVUViZmFDMkZQdVc5a0t2JTJGY1lBV3pBNmZkR1h5N0VaSFpaNk9OeCUyRlRjMmNkWHJTJTJCY2I0JTJGdlczJTJGeVhoeEROajM4ZDBHc1A0NEJvb1EwcFNxdm1nNnFWWU80S0QyZnVSNjRuTEJ6VCUyRkpVT3NkV3gyOVQ2ZyUzRCUzRA..
+
+@@05
+Faça como eu fiz
+
+Chegou a hora de você seguir todos os passos realizados por mim durante esta aula. Caso já tenha feito, excelente. Se ainda não, é importante que você execute o que foi visto nos vídeos para poder continuar com a próxima aula.
+
+Opinião do instrutor
+Continue com os seus estudos, e se houver dúvidas, não hesite em recorrer ao nosso fórum!
+
+06
+O que aprendemos?
+
+Nesta aula:
+git restore
+Aprendemos a trabalhar com essa parte de restauração de arquivos e do projeto, voltando para um estado anterior através do git restore;
+git add
+Aprendemos a adicionar os arquivos que queremos para o próximo commit através do git add.
