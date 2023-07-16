@@ -659,3 +659,40 @@ git restore
 Aprendemos a trabalhar com essa parte de restauração de arquivos e do projeto, voltando para um estado anterior através do git restore;
 git add
 Aprendemos a adicionar os arquivos que queremos para o próximo commit através do git add.
+
+#### 16/07/2023
+
+@05-Ramificacoes e Merge
+
+@@01
+Branch
+
+Durante todo o desenvolvimento desse curso, sempre utilizamos o main, que é o nosso projeto principal, um projeto que buscamos que não tenha erros e falhas.
+O que acontece, geralmente, quando vamos trabalhar em um cenário que tem mais de uma pessoa trabalhando no projeto é que existe o código principal, o main, antigamente era chamado de master e existem outras ramificações.
+
+Tem o local que é o código principal e um outro local que é o código de desenvolvimento ou o que estamos trabalhando especificamente. Por exemplo, poderíamos criar aqui duas branches - considere "branches" como ramificações da nossa aplicação - então vamos ter a nossa branch principal, que é a nossa main, e quero criar mais uma branch, uma branch de desenvolvimento.
+
+Nessa branch de desenvolvimento vou criar alguns códigos, fazer algumas coisas e depois quero mostrar para vocês, por exemplo, se isso já estiver validade, já passou em diversos tipos de testes, eu quero mandar isso que estava na branch de desenvolvimento para a branch main.
+
+Assim garantimos que o nosso código main vai funcionar corretamente e, ao mesmo tempo, estaremos trabalhando em versões diferentes da nossa aplicação sem quebrar o nosso código principal.
+
+Vamos lá, como criar uma branch diferente? No terminal, vamos colocar o comando git checkout, -bpara criar a branch e chamarei essa branch de "desenvolvimento":
+
+git checkout -b desenvolvimentoCOPIAR CÓDIGO
+Quando pressiono "Enter" ele cria a branch de desenvolvimento e estou nela agora. Se você quiser voltar para a branch principal pode usar o comando git switch main. E para voltar para a branch de desenvolvimento: git switch desenvolvimento.
+
+Agora tenho duas branches. Se eu for no GitHub e atualizar a aplicação, ele vai mostrar só a branch main porque eu ainda não fiz nada com a branch de desenvolvimento. Vamos fazer uma alteração na branch de desenvolvimento?
+
+No VS Code, aqui na minha página contato.html eu vou criar um parágrafo: <p> Entre em contato pelo email gui@alura.com</p>. Agora que terminei de editar a minha página de contatos, quero pegar essas modificações da página de contato, adicionar, criar um novo commit e mandar essas modificações para a branch de desenvolvimento.
+
+Vou abrir o terminal e fazer o comando git add contato.html, ou git add ., ambos os códigos dariam certo. Vou fazer o commit: git commit -m "adicionando email de contato".
+
+Fiz um git add e um git commit, agora falta fazer um push para a nossa branch de desenvolvimento. Eu quero mandar para determinada origem, qual é essa origem? A origem de desenvolvimento:
+
+git push origin desenvolvimentoCOPIAR CÓDIGO
+Pressiono "Enter" e ele vai enviar para a branch de desenvolvimento. Ao voltar para o site do GitHub ele informará que temos uma nova branch criada no projeto.
+
+Se eu for na branch principal, a main, a atualização que eu fiz no contato.html com o "Entre em contato pelo email gui@alura.com" não estará presente na main. Então, nós criamos um local específico chamado "desenvolvimento" onde iremos realmente trabalhar no nosso projeto, testar e validar coisas.
+
+Depois que fizemos todo o trabalho na branch de desenvolvimento, o código está ok, tudo funcionando como esperamos, e já podemos subir o código para a branch principal, como fazer para pegar o que está em desenvolvimento e mandar para a nossa branch principal? É isso que aprenderemos no próximo vídeo.
+
