@@ -696,3 +696,47 @@ Se eu for na branch principal, a main, a atualização que eu fiz no contato.htm
 
 Depois que fizemos todo o trabalho na branch de desenvolvimento, o código está ok, tudo funcionando como esperamos, e já podemos subir o código para a branch principal, como fazer para pegar o que está em desenvolvimento e mandar para a nossa branch principal? É isso que aprenderemos no próximo vídeo.
 
+@@02
+Faça como eu fiz: criando uma branch
+
+Você está fazendo um curso na Alura e gostaria de dividir o código do projeto por aulas, para se organizar melhor e também não perder o código antigo depois de uma refatoração e conseguir revisar sua evolução. Como você pode fazer isso?
+
+Opinião do instrutor
+
+Caminho 1: criar uma branch para cada aula do curso com o comando:
+git checkout -b nome-da-branchCOPIAR CÓDIGO
+Com esse comando, você cria uma nova branch e muda automaticamente para ela para dar início ao desenvolvimento.
+
+Caminho 2: criar uma branch para cada aula do curso com o comando:
+git branch nome-da-branchCOPIAR CÓDIGO
+Essa é outra forma de criar uma branch. Nesse caso, ela é criada, mas não há a mudança automática para esta nova ramificação. Para isso, você pode usar o comando git switch nome-da-branch.
+
+@@03
+Merge
+
+Estamos trabalhando com duas branches, a branch principal (main) e a branch de desenvolvimento. O que eu quero fazer agora é pegar tudo que está em desenvolvimento e mandar para a main.
+Esse "mandar para a main" tem um nome técnico no mundo Git: merge. Nós vamos "mergear" esses dois. Vamos falar para ele pegar o que está em desenvolvimento e apontar para o mesmo local em que está o nosso código main.
+
+No terminal, para visualizar todas as branches que tenho, posso rodar o comando git branch. O git branch vai mostrar as branches que estão disponíveis nesse projeto e em qual branch eu estou. A branch que estou é a que está marcada com um asterisco (*).
+
+Depois que tudo que fiz em desenvolvimento estiver ok, vou voltar para a branch principal (main) com o comando git switch main. Agora vou mergear, mandar o que está na branch de desenvolvimento para a branch main.
+
+Mas antes, vou usar o comando git log --oneline. Veja que interessante, temos aqui esse "703d599 criando a página de contatos", que foi nosso último push. Vamos guardar esse número de identificação desse estado "703d599". Então, agora que estou na branch principal, vou rodar o comando git merge com o nome da branch que quero juntar, que é a desenvolvimento:
+
+git merge desenvolvimentoCOPIAR CÓDIGO
+Vou dar "Enter" e ele informa que está atualizando para "703d599..55a0b62". Se eu der agora um git log --oneline, observe que essa identificação 703d599, que era o commit "criando a página de contato" recebeu um novo id que vai juntar a branch main com a branch de desenvolvimento. Fizemos o merge.
+
+Agora, para finalizar preciso fazer o push dessas alterações. Mas agora a origem do push será a main:
+
+git push origin mainCOPIAR CÓDIGO
+Pressiono "Enter" e ele vai enviar essas alterações para a minha branch principal.
+
+Se eu volto no site do GitHub e atualizo a página do projeto, agora na main vai aparecer a atualização mais recente que eu tinha feito na branch de desenvolvimento, no arquivo de contato.html, o "Entre em contato pelo email gui@alura.com".
+
+Recapitulando como fizemos esse merge: estávamos na branch de desenvolvimento, fizemo o switch para ir para a branch principal - podem existir diversas ramificações, branch de correção de bugs, branch de atualizações, branch baseada em funcionalidades diferentes... Até desafio você a abrir o projeto que você trabalha e ver a lista de branches desse projeto. Vai ter um monte de gente trabalhando em diferentes branches.
+
+Mas uma hora é preciso juntar, pegar esse código que foi trabalhado e mergear com o código principal. Uma das técnicas para fazer isso é voltar para o main e fazer um git merge indicando o nome da branch que queremos juntar. Ou seja, pega a main e a branch de desenvolvimento e faça com que elas apontem para o mesmo local.
+
+Depois, só fazemos o push, indicando que a origem desse push vai ser a main.
+
+É assim que pegamos o que está em desenvolvimento e mandamos para a ramificação principal do projeto em que estamos trabalhando.
