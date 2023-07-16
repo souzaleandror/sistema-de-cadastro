@@ -740,3 +740,111 @@ Mas uma hora é preciso juntar, pegar esse código que foi trabalhado e mergear 
 Depois, só fazemos o push, indicando que a origem desse push vai ser a main.
 
 É assim que pegamos o que está em desenvolvimento e mandamos para a ramificação principal do projeto em que estamos trabalhando.
+
+@@04
+Merge de branches
+
+Estamos trabalhando com duas branches: a branch main e a branch title. Fizemos várias alterações na branch title, mas, agora, queremos trazer tudo o que está na title para a main. Como podemos fazer isso?
+
+Usamos o comando: git merge title.
+ 
+Alternativa correta
+Usaremos os comandos git switch title e git merge main.
+ 
+Alternativa correta
+Utilizamos os comandos: git switch main e git merge title.
+ 
+Alternativa correta! Isso aí! Desta forma com o git switch voltamos pra branch principal e depois fazemos o merge colocando tudo o que estava na branch title na branch main.
+
+@@05
+O que aprendemos?
+
+Nesta aula, aprendemos sobre:
+branch
+O que é;
+Como criar uma nova branch chamada "desenvolvimento";
+Como navegar entre a branch principal "main" e a branch "desenvolvimento" através do comando git switch;
+Como enviar todas as alterações feitas na branch "desenvolvimento" para a branch principal “main” com o merge.
+
+@@06
+Parabéns!
+
+Chegou o momento de celebrar sua grande conquista!
+
+
+Neste treinamento, todas as barreiras foram vencidas e você deu seu primeiro mergulho no Git e GitHub.
+
+Você aprendeu o que é e como usar o GitHub de forma prática através de commits e até convidou uma pessoa para participar do seu projeto. Vimos a diferença entre Git e GitHub e aprendemos os principais comandos, como clone, pull, commit, restore, branch e merge.
+
+E não para por aqui! Quero deixar um link com um guia prático dos comandos usados neste treinamento, feito pela equipe de front-end aqui da Alura. Espero que você goste!
+
+Agora, dê uma nota para o curso, pegue seu certificado e comemore bastante essa conquista.
+"Falar é fácil, me mostre o código.” (Linus Torvalds)
+
+Parabéns!!!
+
+Guilherme Lima
+
+https://guilhermeonrails.github.io/manual-do-git-e-github/
+
+https://linktr.ee/guilimadev
+
+@@07
+Conclusão
+
+Link citado aos 3:05 do vídeo: 7 Days of Code
+Paulo: Deixei o Guilherme terminar o curso nessa parte de branches e merge, coisas que trabalhamos muito em desenvolvimento e produção.
+
+Normalmente o que está no main, em produção como chamamos, tem que ficar perfeito porque várias vezes vai "automagicamente" para o seu sistema. Tudo que aparece lá já é deployado, é o que chamamos de integração contínua e deploy contínuo, que você também pode estudar aqui na Alura.
+
+O mais importante é que vimos os principais pontos tanto na web quanto na linha de comando. Mas sem você praticar, sem você pegar um projeto, vai ser muito difícil.
+
+Quem já chegou até aqui já tem muito para usar no dia a dia. Mas depois, no curso 2, vamos ver o pull request, vamos entender mais sobre issues, você vai poder criar sua página pessoal no GitHub, deixar ali seu currículo, o que você faz.
+
+Você vai ver mecanismos ainda mais avançados para trabalhar com merge, com conflitos, e coisas do dia a dia que são muito importantes.
+
+Guilherme: Esses foram nossos primeiros passos, mas ainda vamos aprender muita coisa legal ao longo da nossa jornada. Espero te encontrar no próximo treinamento de Git e GitHub aqui na Alura. Junto com o Paulo criando os commits escondidos, igual ele fez nesse curso.
+
+Paulo: Exatamente. Nós queremos ver mais repositórios no GitHub. Mostre para a comunidade que você criou seu primeiro repositório estudando aqui na Alura, o pessoal fica muito orgulhoso. Nós temos bastante contato com o time de comunidade do GitHub, que faz um trabalho incrível no Brasil. Tem alguns GitHub Stars também, alguns trabalham na Alura e são instrutores da Alura.
+
+Fico muito contente de que a sua primeira caminhada em repositórios distribuídos seja através da Alura. Não deixe de colocar o seu README falando do seu aprendizado, falando da Alura, sempre ficamos muito contentes.
+
+Esperamos você nessa jornada. Tem muita coisa, vá com calma, foca na web. É claro que esse monte de comandos e configurações às vezes assusta, mas você vai ver que isso será tão repetido em diversos cursos e no seu trabalho que você vai acabar pegando.
+
+Tentamos passar aqui o essencial para você, fomos até além do básico para passar o que aparece com muita frequência.
+
+Guilherme: Se você chegou até aqui, Parabéns! Não esqueça de dar a nota do curso e deixar um depoimento do que você gostou e não gostou desse curso. Nos encontramos no próximo treinamento.
+
+Paulo: Se você quiser praticar mais, acesse o nosso desafio do 7 Days of Code. Vamos deixar lá um exercício por dia, para você praticar um pouco todo dia de alguma tecnologia que você escolher. Daremos lições para você fazer no seu GitHub e até ter sua página pessoal no GitHub. É um outro formato de você fazer exercícios e não deixar o GitHub para trás.
+
+Tchau, pessoal! Bons estudos!
+
+https://7daysofcode.io/
+
+08
+Créditos
+
+Group 6.png
+Guilherme Lima
+Paulo Silveira
+Group 16.jpg
+
+Beatriz Moura
+Lorena Garcia
+Luan Alves
+Monica Hillman
+Nayanne Batista
+Neilton Seguins
+Renan Bezerra de Lima
+Group 3.jpg
+
+Dayanna Costa
+Gabriela Pinheiro
+Group 4.jpg
+
+João Melo
+Laura Penedos
+Group 13.jpg
+
+Gabi Teixeira
+Andyara
